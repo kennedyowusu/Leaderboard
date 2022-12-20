@@ -126,6 +126,7 @@ h3 {
 .main-left-list {
   width: 55%;
   display: flex;
+  /* align-items: center; */
   font-size: 1.8rem;
   justify-content: space-between;
   margin-left: 17rem;
@@ -160,6 +161,7 @@ h3 {
 .main-right {
   width: 50%;
   margin-left: 5rem;
+  margin-top: 0rem;
 }
 
 .top-section-right {

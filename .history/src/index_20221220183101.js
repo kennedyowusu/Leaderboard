@@ -3,31 +3,26 @@ import './style.css';
 // Declare variables
 const userName = document.getElementById('userName');
 const userScore = document.getElementById('userScore');
-const submitScore = document.getElementById('submitScore');
+const submit = document.getElementById('submit');
 const mainLeftList = document.getElementById('mainLeftList');
 
-// Declare empty array to store all scores
 let allUsersScores = [];
 
-// Declare empty object to store each user's score
-const eachUserScore = {};
-
 const computeScores = () => {
-  eachUserScore.userName = userName.value;
-  eachUserScore.userScore = userScore.value;
-
-  // Push each user's score to the array
+  const eachUserScore = {};
+  eachUserScore.name = userName.value;
+  eachUserScore.score = userScore.value;
   allUsersScores.push(eachUserScore);
 
   // Save to local storage
-  localStorage.setItem('scores', JSON.stringify(allUsersScores));
+  localStorage.setItem('allUsersScores', JSON.stringify(allUsersScores));
 };
 
 const generateAllScores = () => {
   mainLeftList.innerHTML = '';
   allUsersScores.forEach((score) => {
     const li = `
-    <li>${score.userName}: ${score.userScore}</li>
+    <li>${score.name}: ${score.score}</li>
     `;
     mainLeftList.innerHTML += li;
 
@@ -38,16 +33,17 @@ const generateAllScores = () => {
 };
 
 const retrieveScores = () => {
-  if (localStorage.getItem('scores')) {
-    allUsersScores = JSON.parse(localStorage.getItem('scores'));
+  if (localStorage.getItem('allUsersScores')) {
+    allUsersScores = JSON.parse(localStorage.getItem('allUsersScores'));
+  } else {
+    // allUsersScores = [];
+    generateAllScores();
   }
-  generateAllScores();
 };
 
-const validateFields = () => {
+const submitScore = () => {
   if (userName.value === '' || userScore.value === '') {
-    userName.style.border = '1px solid red';
-    userScore.style.border = '1px solid red';
+    alert('Please fill in all fields');
     return;
   }
   computeScores();
@@ -55,10 +51,9 @@ const validateFields = () => {
 };
 
 // Event listeners
-submitScore.addEventListener('click', (e) => {
+submit.addEventListener('click', (e) => {
   e.preventDefault();
-
-  validateFields();
+  submitScore();
 });
 
 // On load

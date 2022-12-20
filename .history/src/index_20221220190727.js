@@ -46,8 +46,8 @@ const retrieveScores = () => {
 
 const validateFields = () => {
   if (userName.value === '' || userScore.value === '') {
-    userName.style.border = '1px solid red';
-    userScore.style.border = '1px solid red';
+   userName.style.border = '1px solid red';
+   userScore.style.border = '1px solid red';
     return;
   }
   computeScores();

@@ -16,7 +16,7 @@ const computeScores = () => {
   eachUserScore.userName = userName.value;
   eachUserScore.userScore = userScore.value;
 
-  // Push each user's score to the array
+ // Push each user's score to the array
   allUsersScores.push(eachUserScore);
 
   // Save to local storage
@@ -40,14 +40,15 @@ const generateAllScores = () => {
 const retrieveScores = () => {
   if (localStorage.getItem('scores')) {
     allUsersScores = JSON.parse(localStorage.getItem('scores'));
+  } else {
+    // allUsersScores = [];
+    generateAllScores();
   }
-  generateAllScores();
 };
 
 const validateFields = () => {
   if (userName.value === '' || userScore.value === '') {
-    userName.style.border = '1px solid red';
-    userScore.style.border = '1px solid red';
+    alert('Please fill in all fields');
     return;
   }
   computeScores();

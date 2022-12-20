@@ -6,21 +6,17 @@ const userScore = document.getElementById('userScore');
 const submitScore = document.getElementById('submitScore');
 const mainLeftList = document.getElementById('mainLeftList');
 
-// Declare empty array to store all scores
 let allUsersScores = [];
 
-// Declare empty object to store each user's score
-const eachUserScore = {};
-
 const computeScores = () => {
-  eachUserScore.userName = userName.value;
-  eachUserScore.userScore = userScore.value;
+  const eachUserScore = {};
+  eachUserScore.name = userName.value;
+  eachUserScore.score = userScore.value;
 
-  // Push each user's score to the array
   allUsersScores.push(eachUserScore);
 
   // Save to local storage
-  localStorage.setItem('scores', JSON.stringify(allUsersScores));
+  localStorage.setItem('all Users Scores', JSON.stringify(allUsersScores));
 };
 
 const generateAllScores = () => {
@@ -38,27 +34,29 @@ const generateAllScores = () => {
 };
 
 const retrieveScores = () => {
-  if (localStorage.getItem('scores')) {
-    allUsersScores = JSON.parse(localStorage.getItem('scores'));
+  if (localStorage.getItem('all Users Scores')) {
+    allUsersScores = JSON.parse(localStorage.getItem('all Users Scores'));
+  } else {
+    // allUsersScores = [];
+    generateAllScores();
   }
-  generateAllScores();
 };
 
-const validateFields = () => {
-  if (userName.value === '' || userScore.value === '') {
-    userName.style.border = '1px solid red';
-    userScore.style.border = '1px solid red';
-    return;
-  }
-  computeScores();
-  generateAllScores();
-};
+// const submitScore = () => {
+//   if (userName.value === '' || userScore.value === '') {
+//     alert('Please fill in all fields');
+//     return;
+//   }
+//   computeScores();
+//   generateAllScores();
+// };
 
 // Event listeners
 submitScore.addEventListener('click', (e) => {
   e.preventDefault();
-
-  validateFields();
+    computeScores();
+    generateAllScores();
+  // submitScore();
 });
 
 // On load

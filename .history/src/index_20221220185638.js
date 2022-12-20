@@ -40,14 +40,14 @@ const generateAllScores = () => {
 const retrieveScores = () => {
   if (localStorage.getItem('scores')) {
     allUsersScores = JSON.parse(localStorage.getItem('scores'));
+  } else {
+    generateAllScores();
   }
-  generateAllScores();
 };
 
 const validateFields = () => {
   if (userName.value === '' || userScore.value === '') {
-    userName.style.border = '1px solid red';
-    userScore.style.border = '1px solid red';
+    alert('Please fill in all fields');
     return;
   }
   computeScores();
