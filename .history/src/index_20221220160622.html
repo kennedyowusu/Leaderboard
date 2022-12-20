@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Leader Board</title>
+</head>
+
+<body>
+ <main class="main-container">
+   <h1 class="main-title">Leader Board</h1>
+
+   <section class="main-holder">
+    <!-- divide section into two -->
+
+     <section class="main-left">
+       <div class="top-section">
+        <h2 class="main-left-title">Recent Scores</h2>
+        <button class="refresh">Refresh</button>
+       </div>
+       <ul class="main-left-list">
+         <!-- list of recent scores -->
+         <li class="main-left-list-items">
+           <span class="name">Name: </span>
+           <span class="score">100 </span>
+         </li>
+       </ul>
+     </section>
+
+     <section class="main-right">
+       <div class="top-section-right">
+        <h2 class="main-right-title">Add your score</h2>
+       </div>
+       <form class="main-right-form">
+         <input type="text" name="name" placeholder="Your name" required>
+         <input type="number" name="score" placeholder="Your score" required>
+         <button type="submit">Submit</button>
+       </form>
+      </section>
+
+   </section>
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+ </main>
+</body>
+</html>
