@@ -11,8 +11,9 @@ let allUsersScores = [];
 
 // Declare empty object to store each user's score
 
+
 const computeScores = () => {
-  const eachUserScore = {};
+ const eachUserScore = {};
   eachUserScore.userName = userName.value;
   eachUserScore.userScore = userScore.value;
 
