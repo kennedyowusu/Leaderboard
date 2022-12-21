@@ -1,4 +1,4 @@
-const ludu = () => {
+const game = () => {
   fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
     method: 'POST',
     body: JSON.stringify({
@@ -32,7 +32,7 @@ const computeTotal = (scores) => {
 };
 
 export {
-  ludu,
+  game,
   fetchScores,
   computeTotal,
 };

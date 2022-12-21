@@ -7,7 +7,7 @@ import {
   mainLeftList,
   refreshBtn,
 } from './module/variables.js';
-import resetForm from './module/reset_form.js';
+// import resetForm from './module/reset_form.js';
 
 // Declare empty array to store all scores
 let allUsersScores = [];
@@ -26,7 +26,7 @@ const computeScores = () => {
   // allUsersScores.sort((a, b) => b.userScore - a.userScore);
 
   computeTotal(allUsersScores);
-  resetForm();
+  // resetForm();
 
   // Save to local storage
   localStorage.setItem('scores', JSON.stringify(allUsersScores));
@@ -41,7 +41,7 @@ const generateAllScores = () => {
     mainLeftList.innerHTML += li;
 
     // reset form to empty
-    resetForm();
+    // resetForm();
   });
 };
 
@@ -56,12 +56,12 @@ refreshBtn.addEventListener('click', () => {
   refreshScores();
 });
 
-// const retrieveScores = () => {
-//   if (localStorage.getItem('scores')) {
-//     allUsersScores = JSON.parse(localStorage.getItem('scores'));
-//   }
-//   generateAllScores();
-// };
+const retrieveScores = () => {
+  if (localStorage.getItem('scores')) {
+    allUsersScores = JSON.parse(localStorage.getItem('scores'));
+  }
+  generateAllScores();
+};
 
 // Event listeners
 submitScore.addEventListener('click', (e) => {
@@ -77,6 +77,5 @@ submitScore.addEventListener('click', (e) => {
 
 // On load
 window.addEventListener('load', () => {
-  // retrieveScores();
-  refreshScores();
+  retrieveScores();
 });

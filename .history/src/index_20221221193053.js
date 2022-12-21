@@ -41,7 +41,7 @@ const generateAllScores = () => {
     mainLeftList.innerHTML += li;
 
     // reset form to empty
-    resetForm();
+    // resetForm();
   });
 };
 
@@ -56,12 +56,12 @@ refreshBtn.addEventListener('click', () => {
   refreshScores();
 });
 
-// const retrieveScores = () => {
-//   if (localStorage.getItem('scores')) {
-//     allUsersScores = JSON.parse(localStorage.getItem('scores'));
-//   }
-//   generateAllScores();
-// };
+const retrieveScores = () => {
+  if (localStorage.getItem('scores')) {
+    allUsersScores = JSON.parse(localStorage.getItem('scores'));
+  }
+  generateAllScores();
+};
 
 // Event listeners
 submitScore.addEventListener('click', (e) => {
@@ -77,6 +77,5 @@ submitScore.addEventListener('click', (e) => {
 
 // On load
 window.addEventListener('load', () => {
-  // retrieveScores();
-  refreshScores();
+  retrieveScores();
 });

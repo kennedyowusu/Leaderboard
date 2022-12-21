@@ -33,6 +33,6 @@ const computeTotal = (scores) => {
 
 export {
   ludu,
-  fetchScores,
   computeTotal,
+  fetchScores,
 };
