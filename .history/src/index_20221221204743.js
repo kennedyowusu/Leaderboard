@@ -25,7 +25,7 @@ const computeScores = () => {
   // Sort the array in descending order
   // allUsersScores.sort((a, b) => b.userScore - a.userScore);
 
-  computeTotal(eachUserScore);
+  computeTotal(allUsersScores);
   resetForm();
 
   // Save to local storage

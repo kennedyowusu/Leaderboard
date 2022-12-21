@@ -25,7 +25,7 @@ const computeScores = () => {
   // Sort the array in descending order
   // allUsersScores.sort((a, b) => b.userScore - a.userScore);
 
-  computeTotal(eachUserScore);
+  computeTotal(allUsersScores);
   resetForm();
 
   // Save to local storage
@@ -69,8 +69,10 @@ submitScore.addEventListener('click', (e) => {
   if (userName.value === '' || userScore.value === '') {
     userName.style.border = '1px solid red';
     userScore.style.border = '1px solid red';
-    return;
+    // return;
   }
+  // computeScores();
+  // generateAllScores();
   computeScores();
 });
 

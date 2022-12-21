@@ -29,7 +29,7 @@ const computeScores = () => {
   resetForm();
 
   // Save to local storage
-  localStorage.setItem('scores', JSON.stringify(allUsersScores));
+  // localStorage.setItem('scores', JSON.stringify(allUsersScores));
 };
 
 const generateAllScores = () => {
