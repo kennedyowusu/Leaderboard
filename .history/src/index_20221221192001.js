@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import './style.css';
 import { computeTotal, fetchScores } from './module/ludu.js';
 import {

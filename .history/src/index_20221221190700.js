@@ -1,18 +1,24 @@
 import './style.css';
-import { computeTotal, fetchScores } from './module/ludu.js';
-import {
-  userName,
-  userScore,
-  submitScore,
-  mainLeftList,
-  refreshBtn,
-} from './module/variables.js';
-import resetForm from './module/reset_form.js';
+import computeTotal from './module/ludu.js';
+import fetchScores from './module/ludu.js';
+
+// Declare variables
+const userName = document.getElementById('userName');
+const userScore = document.getElementById('userScore');
+const submitScore = document.getElementById('submitScore');
+const mainLeftList = document.getElementById('mainLeftList');
+const refreshBtn = document.getElementById('refreshBtn');
 
 // Declare empty array to store all scores
 let allUsersScores = [];
 
 // Declare empty object to store each user's score
+
+// Reset form to empty
+const resetForm = () => {
+  userName.value = '';
+  userScore.value = '';
+};
 
 const computeScores = () => {
   const eachUserScore = {};
@@ -47,14 +53,10 @@ const generateAllScores = () => {
 
 // Refresh button to refresh the scores
 const refreshScores = async () => {
-  const scores = await fetchScores();
+  const scores = await computeTotal();
   allUsersScores = scores;
   generateAllScores();
 };
-
-refreshBtn.addEventListener('click', () => {
-  refreshScores();
-});
 
 const retrieveScores = () => {
   if (localStorage.getItem('scores')) {

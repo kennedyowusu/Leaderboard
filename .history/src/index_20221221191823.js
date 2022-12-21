@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import './style.css';
 import { computeTotal, fetchScores } from './module/ludu.js';
 import {
@@ -7,12 +8,13 @@ import {
   mainLeftList,
   refreshBtn,
 } from './module/variables.js';
-import resetForm from './module/reset_form.js';
 
 // Declare empty array to store all scores
 let allUsersScores = [];
 
 // Declare empty object to store each user's score
+
+
 
 const computeScores = () => {
   const eachUserScore = {};
