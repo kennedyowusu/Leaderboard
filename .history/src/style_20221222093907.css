@@ -84,7 +84,7 @@ h3 {
   letter-spacing: 0.2rem;
   margin-bottom: 6rem;
   margin-top: 5rem;
-  margin-left: 14rem;
+  margin-left: 16rem;
 }
 
 .main-holder {
@@ -120,50 +120,29 @@ h3 {
   margin-left: 4rem;
   margin-top: -13rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-  border: none;
-  padding: 1.2rem 4rem;
+  border: 0.2rem solid black;
+  padding: 0.6rem 2rem;
   border-radius: 0.5rem;
-  background: #63474d;
-  color: #fff;
-}
-
-.refresh:hover {
-  background: #aa767c;
-  color: #fff;
-  transform: scale(1.1);
 }
 
 .main-left-list {
-  width: 65%;
+  width: 55%;
   display: flex;
   font-size: 1.8rem;
   justify-content: space-between;
-  margin-left: 15rem;
-  margin-bottom: 5rem;
+  margin-left: 17rem;
   padding-left: 1rem;
   border: 0.2rem solid black;
   flex-direction: column;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
 }
 
-.main-left-list li {
+.main-left-list-items {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 28rem;
   padding: 1rem 1.2rem;
-  border-bottom: 0.2rem solid black;
-  font-weight: bold;
-}
-
-.main-left-list li:last-child {
-  border-bottom: none;
-}
-
-.main-left-list li:hover {
-  background: #aa767c;
-  color: #fff;
-}
-
-.main-left-list li:nth-child(odd) {
-  background: #63474d;
-  color: #fff;
 }
 
 .li {
@@ -183,7 +162,7 @@ h3 {
 .main-right {
   width: 50%;
   margin-left: 5rem;
-  margin-top: -48rem;
+  margin-top: -22rem;
 }
 
 .top-section-right {
@@ -198,31 +177,28 @@ h3 {
   font-size: 3rem;
   font-weight: 600;
   letter-spacing: 0.2rem;
-  margin-top: -2rem;
 }
 
 .main-right-form {
   width: 100%;
   display: flex;
-  margin-top: 4rem;
+  margin-top: 2rem;
   flex-direction: column;
 }
 
 input[type="text"],
 input[type="number"] {
-  width: 50%;
-  padding: 2rem;
+  width: 40%;
+  padding: 1rem;
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.2rem;
-  margin-bottom: 3rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-  background-color: #fff
+  margin-bottom: 2rem;
+  border: 0.2rem solid black;
 }
 
 .submit {
-  width: 50%;
+  width: 40%;
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.2rem;
@@ -234,19 +210,13 @@ input[type="number"] {
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.2rem;
-  width: 50%;
-  text-align: center;
+  width: 40%;
+  text-align: right;
   float: right;
-  border: none;
+  border:none;
   border-radius: 0.5rem;
-  padding: 1.5rem;
+  padding: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-  background: #63474d;
+  background: teal;
   color: #fff;
-}
-
-.btn-text:hover {
-  background: #aa767c;
-  color: #fff;
-  transform: scale(1.1);
 }

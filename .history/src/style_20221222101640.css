@@ -139,7 +139,7 @@ h3 {
   font-size: 1.8rem;
   justify-content: space-between;
   margin-left: 15rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   padding-left: 1rem;
   border: 0.2rem solid black;
   flex-direction: column;
@@ -198,7 +198,7 @@ h3 {
   font-size: 3rem;
   font-weight: 600;
   letter-spacing: 0.2rem;
-  margin-top: -2rem;
+  margin-top: 3rem;
 }
 
 .main-right-form {

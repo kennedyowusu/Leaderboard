@@ -198,13 +198,13 @@ h3 {
   font-size: 3rem;
   font-weight: 600;
   letter-spacing: 0.2rem;
-  margin-top: -2rem;
+  margin-top: 3rem;
 }
 
 .main-right-form {
   width: 100%;
   display: flex;
-  margin-top: 4rem;
+  margin-top:1rem;
   flex-direction: column;
 }
 
