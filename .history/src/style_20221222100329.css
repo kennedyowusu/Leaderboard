@@ -139,7 +139,6 @@ h3 {
   font-size: 1.8rem;
   justify-content: space-between;
   margin-left: 15rem;
-  margin-bottom: 5rem;
   padding-left: 1rem;
   border: 0.2rem solid black;
   flex-direction: column;
@@ -183,7 +182,7 @@ h3 {
 .main-right {
   width: 50%;
   margin-left: 5rem;
-  margin-top: -48rem;
+  margin-top: -22rem;
 }
 
 .top-section-right {
@@ -198,13 +197,12 @@ h3 {
   font-size: 3rem;
   font-weight: 600;
   letter-spacing: 0.2rem;
-  margin-top: -2rem;
 }
 
 .main-right-form {
   width: 100%;
   display: flex;
-  margin-top: 4rem;
+  margin-top: 2rem;
   flex-direction: column;
 }
 
@@ -218,7 +216,7 @@ input[type="number"] {
   margin-bottom: 3rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-  background-color: #fff;
+  background-color: #fff
 }
 
 .submit {
@@ -226,7 +224,7 @@ input[type="number"] {
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.2rem;
-  text-align: right;
+  /* text-align: right; */
   margin-top: 0.5rem;
 }
 
@@ -234,12 +232,12 @@ input[type="number"] {
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.2rem;
-  width: 50%;
+  width: 40%;
   text-align: center;
   float: right;
   border: none;
   border-radius: 0.5rem;
-  padding: 1.5rem;
+  padding: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
   background: #63474d;
   color: #fff;

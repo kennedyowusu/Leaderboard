@@ -198,7 +198,7 @@ h3 {
   font-size: 3rem;
   font-weight: 600;
   letter-spacing: 0.2rem;
-  margin-top: -2rem;
+  margin-top: 3rem;
 }
 
 .main-right-form {
@@ -218,7 +218,7 @@ input[type="number"] {
   margin-bottom: 3rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-  background-color: #fff;
+  background-color: #fff
 }
 
 .submit {
