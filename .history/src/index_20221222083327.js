@@ -19,6 +19,8 @@ let allUsersScores = [];
 // Declare empty object to store each user's score
 const computeScores = () => {
   const eachUserScore = {};
+  // eachUserScore.userName = userName.value;
+  // eachUserScore.userScore = userScore.value;
 
   eachUserScore.user = userName.value;
   eachUserScore.score = userScore.value;
@@ -31,6 +33,9 @@ const computeScores = () => {
 
   computeTotal(eachUserScore);
   resetForm();
+
+  // Save to local storage
+  // localStorage.setItem('scores', JSON.stringify(allUsersScores));
 };
 
 const generateAllScores = () => {

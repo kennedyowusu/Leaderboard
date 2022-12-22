@@ -17,8 +17,11 @@ import resetForm from './module/reset_form.js';
 let allUsersScores = [];
 
 // Declare empty object to store each user's score
+
 const computeScores = () => {
   const eachUserScore = {};
+  // eachUserScore.userName = userName.value;
+  // eachUserScore.userScore = userScore.value;
 
   eachUserScore.user = userName.value;
   eachUserScore.score = userScore.value;
@@ -31,6 +34,9 @@ const computeScores = () => {
 
   computeTotal(eachUserScore);
   resetForm();
+
+  // Save to local storage
+  // localStorage.setItem('scores', JSON.stringify(allUsersScores));
 };
 
 const generateAllScores = () => {
@@ -57,6 +63,13 @@ const refreshScores = async () => {
 refreshBtn.addEventListener('click', () => {
   refreshScores();
 });
+
+// const retrieveScores = () => {
+//   if (localStorage.getItem('scores')) {
+//     allUsersScores = JSON.parse(localStorage.getItem('scores'));
+//   }
+//   generateAllScores();
+// };
 
 // Event listeners
 submitScore.addEventListener('click', (e) => {

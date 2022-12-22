@@ -1,27 +1,24 @@
+/* eslint-disable import/named */
 import './style.css';
-import {
-  computeTotal,
-  fetchScores,
-} from './module/ludu.js';
+import { computeTotal, fetchScores } from './module/ludu.js';
 
-import {
-  userName,
-  userScore,
-  submitScore,
-  mainLeftList,
-  refreshBtn,
-} from './module/variables.js';
-import resetForm from './module/reset_form.js';
+
 
 // Declare empty array to store all scores
 let allUsersScores = [];
 
 // Declare empty object to store each user's score
+
+// Reset form to empty
+const resetForm = () => {
+  userName.value = '';
+  userScore.value = '';
+};
+
 const computeScores = () => {
   const eachUserScore = {};
-
-  eachUserScore.user = userName.value;
-  eachUserScore.score = userScore.value;
+  eachUserScore.userName = userName.value;
+  eachUserScore.userScore = userScore.value;
 
   // Push each user's score to the array
   allUsersScores.push(eachUserScore);
@@ -29,16 +26,18 @@ const computeScores = () => {
   // Sort the array in descending order
   // allUsersScores.sort((a, b) => b.userScore - a.userScore);
 
-  computeTotal(eachUserScore);
+  computeTotal(allUsersScores);
   resetForm();
+
+  // Save to local storage
+  localStorage.setItem('scores', JSON.stringify(allUsersScores));
 };
 
 const generateAllScores = () => {
   mainLeftList.innerHTML = '';
-  // Sort the array in descending order
-  allUsersScores.sort((a, b) => b.userScore - a.userScore).forEach((item) => {
+  allUsersScores.forEach((score) => {
     const li = `
-    <li>${item.user}: ${item.score}</li>
+    <li>${score.userName}: ${score.userScore}</li>
     `;
     mainLeftList.innerHTML += li;
 
@@ -50,13 +49,20 @@ const generateAllScores = () => {
 // Refresh button to refresh the scores
 const refreshScores = async () => {
   const scores = await fetchScores();
-  allUsersScores = await scores;
+  allUsersScores = scores;
   generateAllScores();
 };
 
 refreshBtn.addEventListener('click', () => {
   refreshScores();
 });
+
+const retrieveScores = () => {
+  if (localStorage.getItem('scores')) {
+    allUsersScores = JSON.parse(localStorage.getItem('scores'));
+  }
+  generateAllScores();
+};
 
 // Event listeners
 submitScore.addEventListener('click', (e) => {
@@ -67,9 +73,10 @@ submitScore.addEventListener('click', (e) => {
     return;
   }
   computeScores();
+  generateAllScores();
 });
 
 // On load
 window.addEventListener('load', () => {
-  refreshScores();
+  retrieveScores();
 });
