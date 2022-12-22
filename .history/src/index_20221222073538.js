@@ -1,9 +1,6 @@
 import './style.css';
-import {
-  computeTotal,
-  fetchScores,
-} from './module/ludu.js';
-
+import computeTotal from './module/ludu.js';
+import fetchScores from './module/fetchApi.js';
 import {
   userName,
   userScore,
@@ -17,8 +14,11 @@ import resetForm from './module/reset_form.js';
 let allUsersScores = [];
 
 // Declare empty object to store each user's score
+
 const computeScores = () => {
   const eachUserScore = {};
+  // eachUserScore.userName = userName.value;
+  // eachUserScore.userScore = userScore.value;
 
   eachUserScore.user = userName.value;
   eachUserScore.score = userScore.value;
@@ -31,14 +31,17 @@ const computeScores = () => {
 
   computeTotal(eachUserScore);
   resetForm();
+
+  // Save to local storage
+  // localStorage.setItem('scores', JSON.stringify(allUsersScores));
 };
 
 const generateAllScores = () => {
   mainLeftList.innerHTML = '';
   // Sort the array in descending order
-  allUsersScores.sort((a, b) => b.userScore - a.userScore).forEach((item) => {
+  allUsersScores.sort((a, b) => b.userScore - a.userScore).forEach((score) => {
     const li = `
-    <li>${item.user}: ${item.score}</li>
+    <li>${score.user}: ${score.score}</li>
     `;
     mainLeftList.innerHTML += li;
 
@@ -50,13 +53,20 @@ const generateAllScores = () => {
 // Refresh button to refresh the scores
 const refreshScores = async () => {
   const scores = await fetchScores();
-  allUsersScores = await scores;
+  allUsersScores = scores;
   generateAllScores();
 };
 
 refreshBtn.addEventListener('click', () => {
   refreshScores();
 });
+
+// const retrieveScores = () => {
+//   if (localStorage.getItem('scores')) {
+//     allUsersScores = JSON.parse(localStorage.getItem('scores'));
+//   }
+//   generateAllScores();
+// };
 
 // Event listeners
 submitScore.addEventListener('click', (e) => {
