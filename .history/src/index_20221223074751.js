@@ -1,6 +1,6 @@
 import './style.css';
-import fetchScores from './module/fetchScores.js';
-import computeTotal from './module/computeTotal.js';
+import fetchScores from './module/fetch_scores.js';
+import computeTotal from './module/compute_total.js';
 
 import {
   userName,
