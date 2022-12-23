@@ -11,4 +11,8 @@ const ludu = () => {
   }).then((response) => response.json());
 };
 
-export default ludu;
+export {
+  ludu,
+  fetchScores,
+  computeTotal,
+};
